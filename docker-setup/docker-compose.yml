@@ -4,20 +4,22 @@ services:
   frontend:
     image: litheeshkumar/gxp-frontend:v1
     ports:
-      - "3000:3000"
+      - "${FRONTEND_PORT}:3000"
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=${"http://localhost:8000"}
     depends_on:
       - backend
 
   backend:
     image: litheeshkumar/gxp-backend:v1
     ports:
-      - "8000:80"
+      - "${BACKEND_PORT}:8000"
     environment:
-      - MODEL_URL=http://model:5000  # Example env to connect to model
+      - MODEL_API_URL=${"http://localhost:5000"}
     depends_on:
       - model
 
   model:
     image: litheeshkumar/verixa_model_devops:latest
     ports:
-      - "5000:5000"
+      - "${MODEL_PORT}:5000"
