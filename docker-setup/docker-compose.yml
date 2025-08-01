@@ -6,7 +6,7 @@ services:
     ports:
       - "${FRONTEND_PORT}:3000"
     environment:
-      - NEXT_PUBLIC_BACKEND_URL=${"http://localhost:8000"}
+      - NEXT_PUBLIC_BACKEND_URL=${"http://host.docker.internal:8000"}
     depends_on:
       - backend
 
@@ -15,7 +15,7 @@ services:
     ports:
       - "${BACKEND_PORT}:8000"
     environment:
-      - MODEL_API_URL=${"http://localhost:5000"}
+      - MODEL_API_URL=${"http://host.docker.internal:5000"}
     depends_on:
       - model
 
