@@ -18,6 +18,6 @@ services:
       - model
 
   model:
-    image: litheeshkumar/gxp-model:latest
+    image: litheeshkumar/verixa_model_devops:latest
     ports:
       - "5000:5000"
