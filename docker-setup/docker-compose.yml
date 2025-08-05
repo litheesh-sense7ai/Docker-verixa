@@ -6,7 +6,7 @@ services:
     ports:
       - "${FRONTEND_PORT}:3000"
     environment:
-      - NEXT_PUBLIC_BACKEND_URL=${"http://host.docker.internal:8000"}
+      - NEXT_PUBLIC_BACKEND_URL=${"https://api.dev.verixacopilot.com/docs"}
     depends_on:
       - backend
 
