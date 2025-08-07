@@ -42,7 +42,7 @@ services:
       - milvus
 
   model:
-    image: litheeshkumar/verixa_model_devops:latest
+    image: litheeshkumar/gxp-model:v3
     container_name: gxp_model
     expose:
       - "5000"
